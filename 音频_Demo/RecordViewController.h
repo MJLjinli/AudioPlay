@@ -10,5 +10,6 @@
 
 @interface RecordViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *recordImageView;
+@property (weak, nonatomic) IBOutlet UIProgressView *powerProgressView;
 
 @end

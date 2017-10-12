@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordViewController">
             <connections>
+                <outlet property="powerProgressView" destination="71M-E8-tDa" id="pr7-XW-GNY"/>
                 <outlet property="recordImageView" destination="7DX-nK-Mxk" id="j2t-uY-kue"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,12 +29,9 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOk-sI-Hgw">
-                    <rect key="frame" x="20" y="380" width="80" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="80" id="JL5-Cx-GcH"/>
-                        <constraint firstAttribute="height" constant="40" id="ugP-98-NP5"/>
-                    </constraints>
-                    <state key="normal" title="录音开始">
+                    <rect key="frame" x="15" y="380" width="75" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="开始录音">
                         <color key="titleColor" red="0.0" green="0.68627450980000004" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -41,8 +39,9 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sq0-jl-3OG">
-                    <rect key="frame" x="275" y="380" width="80" height="40"/>
-                    <state key="normal" title="录音结束">
+                    <rect key="frame" x="285" y="380" width="75" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="停止录音">
                         <color key="titleColor" red="0.0" green="0.68627450980000004" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -63,19 +62,55 @@
                         <action selector="backBtn:" destination="-1" eventType="touchUpInside" id="X2w-YK-IXZ"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEz-lU-fRs">
+                    <rect key="frame" x="105" y="380" width="75" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="暂停录音">
+                        <color key="titleColor" red="0.0" green="0.68627450980000004" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pauseRecord:" destination="-1" eventType="touchUpInside" id="Iag-Hf-XPv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrh-q9-fNq">
+                    <rect key="frame" x="195" y="380" width="75" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="恢复录音">
+                        <color key="titleColor" red="0.0" green="0.68627450980000004" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="resumeRecord:" destination="-1" eventType="touchUpInside" id="6st-iE-3Pj"/>
+                    </connections>
+                </button>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71M-E8-tDa">
+                    <rect key="frame" x="15" y="438" width="345" height="2"/>
+                    <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                </progressView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Sq0-jl-3OG" firstAttribute="width" secondItem="yOk-sI-Hgw" secondAttribute="width" id="96w-os-deJ"/>
-                <constraint firstItem="Sq0-jl-3OG" firstAttribute="top" secondItem="yOk-sI-Hgw" secondAttribute="top" id="Ef4-Bk-99W"/>
+                <constraint firstItem="Lrh-q9-fNq" firstAttribute="width" secondItem="ZEz-lU-fRs" secondAttribute="width" id="28o-jo-cjy"/>
+                <constraint firstItem="71M-E8-tDa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="3e4-ww-20u"/>
+                <constraint firstItem="yOk-sI-Hgw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="6AW-Xw-O3N"/>
+                <constraint firstAttribute="trailing" secondItem="71M-E8-tDa" secondAttribute="trailing" constant="15" id="7Af-ZY-Mi6"/>
+                <constraint firstAttribute="trailing" secondItem="Sq0-jl-3OG" secondAttribute="trailing" constant="15" id="Aqk-9h-h1O"/>
+                <constraint firstItem="Sq0-jl-3OG" firstAttribute="height" secondItem="Lrh-q9-fNq" secondAttribute="height" id="K5B-Vj-lqK"/>
                 <constraint firstItem="fgW-mt-Xh1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Lkl-2R-F1Y"/>
+                <constraint firstItem="Sq0-jl-3OG" firstAttribute="top" secondItem="Lrh-q9-fNq" secondAttribute="top" id="NiP-8V-cue"/>
                 <constraint firstItem="fgW-mt-Xh1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="POb-rd-zlt"/>
                 <constraint firstItem="7DX-nK-Mxk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="S7q-NQ-riM"/>
-                <constraint firstItem="yOk-sI-Hgw" firstAttribute="top" secondItem="7DX-nK-Mxk" secondAttribute="bottom" constant="130" id="ipZ-QW-vCP"/>
-                <constraint firstAttribute="trailing" secondItem="Sq0-jl-3OG" secondAttribute="trailing" constant="20" id="kL7-XU-F2Q"/>
-                <constraint firstItem="yOk-sI-Hgw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="s9X-6W-P5r"/>
+                <constraint firstItem="ZEz-lU-fRs" firstAttribute="top" secondItem="yOk-sI-Hgw" secondAttribute="top" id="Sgm-E6-WR8"/>
+                <constraint firstItem="Lrh-q9-fNq" firstAttribute="height" secondItem="ZEz-lU-fRs" secondAttribute="height" id="VKy-eZ-XRu"/>
+                <constraint firstItem="Sq0-jl-3OG" firstAttribute="leading" secondItem="Lrh-q9-fNq" secondAttribute="trailing" constant="15" id="WaQ-0d-ttE"/>
+                <constraint firstItem="Sq0-jl-3OG" firstAttribute="width" secondItem="Lrh-q9-fNq" secondAttribute="width" id="aM2-iH-X7R"/>
+                <constraint firstItem="yOk-sI-Hgw" firstAttribute="top" secondItem="7DX-nK-Mxk" secondAttribute="bottom" constant="130" id="aYZ-XY-bBV"/>
+                <constraint firstItem="Lrh-q9-fNq" firstAttribute="top" secondItem="ZEz-lU-fRs" secondAttribute="top" id="bVM-5l-Pju"/>
+                <constraint firstItem="ZEz-lU-fRs" firstAttribute="width" secondItem="yOk-sI-Hgw" secondAttribute="width" id="d8W-um-AFj"/>
+                <constraint firstItem="71M-E8-tDa" firstAttribute="top" secondItem="ZEz-lU-fRs" secondAttribute="bottom" constant="30" id="gFs-SC-GGY"/>
+                <constraint firstItem="ZEz-lU-fRs" firstAttribute="height" secondItem="yOk-sI-Hgw" secondAttribute="height" id="lDn-kW-Spq"/>
+                <constraint firstItem="Lrh-q9-fNq" firstAttribute="leading" secondItem="ZEz-lU-fRs" secondAttribute="trailing" constant="15" id="mK8-26-KKB"/>
                 <constraint firstItem="7DX-nK-Mxk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wOH-0j-sFj"/>
-                <constraint firstItem="Sq0-jl-3OG" firstAttribute="height" secondItem="yOk-sI-Hgw" secondAttribute="height" id="xOu-wB-ghO"/>
+                <constraint firstItem="ZEz-lU-fRs" firstAttribute="leading" secondItem="yOk-sI-Hgw" secondAttribute="trailing" constant="15" id="zpO-2T-0Y4"/>
             </constraints>
         </view>
     </objects>
